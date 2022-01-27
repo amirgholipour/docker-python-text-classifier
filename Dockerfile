@@ -5,10 +5,16 @@ FROM jupyter/datascience-notebook
 
 RUN pip install flask
 
-COPY models/* /home/jovyan/work/models/
-COPY service.py /home/jovyan/work
+# COPY models/* /home/saeed/work/models/
+# COPY service.py /home/saeed/work
 
-WORKDIR /home/jovyan/work
+COPY models/* ./models/
+COPY service.py ./service.py
+# COPY train.py ./train.py
+# COPY api.py ./api.py
+
+
+# WORKDIR /home/saeed/work
 ENV FLASK_APP=service.py
-# ENV FLASK_DEBUG=0
+ENV FLASK_DEBUG=1
 CMD ["flask", "run", "--host=0.0.0.0"]
