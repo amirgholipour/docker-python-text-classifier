@@ -15,7 +15,7 @@ COPY service.py /home/saeed/work
 
 
 WORKDIR /home/saeed/work
-ENV FLASK_APP=service.py
+# ENV FLASK_APP=service.py
 ENV FLASK_DEBUG=1
 # CMD ["flask", "run", "--host=0.0.0.0"]
 EXPOSE 8080
