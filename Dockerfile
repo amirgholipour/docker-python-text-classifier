@@ -1,10 +1,11 @@
 # docker build -t skasmani/text-classifier-service .
 # docker run -it --rm -p 5000:5000 skasmani/text-classifier-service
 
-FROM jupyter/datascience-notebook
+# FROM jupyter/datascience-notebook
+FROM jupyter/scipy-notebook
 
 RUN pip install flask
-
+RUN pip install -U scikit-learn
 COPY models/* /home/skasmani/work/models/
 COPY api.py /home/skasmani/work
 
