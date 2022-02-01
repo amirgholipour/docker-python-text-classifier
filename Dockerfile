@@ -11,8 +11,16 @@ COPY api.py /home/skasmani/work
 
 WORKDIR /home/skasmani/work
 
-EXPOSE 8080
+
+
+
+#EXPOSE 8080
 
 ENV FLASK_APP=api.py
-CMD ["python3", "api.py", "8080"]
+
+
+ENV FLASK_DEBUG=0
+CMD [“flask”, “run”, “ — host=0.0.0.0”]
+
+# CMD ["python3", "api.py", "8080"]
 #CMD ["flask", "run","8080"] "--host=0.0.0.0"]
